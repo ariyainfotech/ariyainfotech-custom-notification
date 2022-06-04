@@ -1,0 +1,83 @@
+<?php if(sizeof($block->getNotificationCollection()) > 0): ?>
+<div class="notification-main">
+	<?php foreach($block->getNotificationCollection() as $notification): ?>
+
+		<?php if($notification->getType() == "request" && $notification->getRequestId() != "" && $notification->getQuoteId() != ""): ?>
+		    <a href="<?php echo $block->getBaseUrl()?>requester/account/requestshow?id=<?php echo $notification->getRequestId()?>&qid=<?php echo $notification->getQuoteId() ?>">
+    		<div class="notification-block">
+    			<div class="icon-img"><img src='<?php echo $this->getViewFileUrl('AriyaInfoTech_Notification::images/bell-solid.png'); ?>' alt="image-icon" width="25"></div>
+    			<div class="notification-details">
+    				<h1><?php echo $notification->getMessageLabel(); ?></h1>
+    				<p class="date"><?php echo $block->setDateFormate($notification->getCreatedAt()); ?></p>
+    				<p><?php echo $notification->getMessage(); ?></p>
+    			</div>
+    		</div>
+		</a>
+		
+		<?php elseif ($notification->getType() == "order_place"): ?>
+		
+		 <a href="<?php echo $block->getBaseUrl()?>sale/myorder/index/">
+    		<div class="notification-block">
+    			<div class="icon-img"><img src='<?php echo $this->getViewFileUrl('AriyaInfoTech_Notification::images/bell-solid.png'); ?>' alt="image-icon" width="25"></div>
+    			<div class="notification-details">
+    				<h1><?php echo $notification->getMessageLabel(); ?></h1>
+    				<p class="date"><?php echo $block->setDateFormate($notification->getCreatedAt()); ?></p>
+    				<p><?php echo $notification->getMessage(); ?></p>
+    			</div>
+    		</div>
+		</a>
+		<?php elseif ($notification->getType() == "invoice" && $notification->getOrderId() != "") : ?>
+		
+		 <a href="<?php echo $block->getBaseUrl()?>sale/myorder/details/order_id/<?php echo $notification->getOrderId()?>">
+    		<div class="notification-block">
+    			<div class="icon-img"><img src='<?php echo $this->getViewFileUrl('AriyaInfoTech_Notification::images/bell-solid.png'); ?>' alt="image-icon" width="25"></div>
+    			<div class="notification-details">
+    				<h1><?php echo $notification->getMessageLabel(); ?></h1>
+    				<p class="date"><?php echo $block->setDateFormate($notification->getCreatedAt()); ?></p>
+    				<p><?php echo $notification->getMessage(); ?></p>
+    			</div>
+    		</div>
+		</a>
+		<?php elseif ($notification->getType() == "shipment" && $notification->getOrderId() != "") : ?>
+		
+		 <a href="<?php echo $block->getBaseUrl()?>sale/myorder/details/order_id/<?php echo $notification->getOrderId()?>">
+    		<div class="notification-block">
+    			<div class="icon-img"><img src='<?php echo $this->getViewFileUrl('AriyaInfoTech_Notification::images/bell-solid.png'); ?>' alt="image-icon" width="25"></div>
+    			<div class="notification-details">
+    				<h1><?php echo $notification->getMessageLabel(); ?></h1>
+    				<p class="date"><?php echo $block->setDateFormate($notification->getCreatedAt()); ?></p>
+    				<p><?php echo $notification->getMessage(); ?></p>
+    			</div>
+    		</div>
+		</a>
+		<?php elseif ($notification->getType() == "budget" && $notification->getIsRequester() == "no" && $notification->getIsRequester() != "" && $notification->getRequesterId() != "") : ?>
+		
+		 <a href="<?php echo $block->getBaseUrl()?>requester/account/edit/id/<?php echo $notification->getRequesterId()?>">
+    		<div class="notification-block">
+    			<div class="icon-img"><img src='<?php echo $this->getViewFileUrl('AriyaInfoTech_Notification::images/bell-solid.png'); ?>' alt="image-icon" width="25"></div>
+    			<div class="notification-details">
+    				<h1><?php echo $notification->getMessageLabel(); ?></h1>
+    				<p class="date"><?php echo $block->setDateFormate($notification->getCreatedAt()); ?></p>
+    				<p><?php echo $notification->getMessage(); ?></p>
+    			</div>
+    		</div>
+		</a>
+		<?php else :?>
+		<div class="notification-block">
+    			<div class="icon-img"><img src='<?php echo $this->getViewFileUrl('AriyaInfoTech_Notification::images/bell-solid.png'); ?>' alt="image-icon" width="25"></div>
+    			<div class="notification-details">
+    				<h1><?php echo $notification->getMessageLabel(); ?></h1>
+    				<p class="date"><?php echo $block->setDateFormate($notification->getCreatedAt()); ?></p>
+    				<p><?php echo $notification->getMessage(); ?></p>
+    			</div>
+    		</div>
+		<?php endif; ?>
+		
+	<?php endforeach; ?>
+</div>
+<?php if ($block->getChildHtml('pager')): ?>
+    <div class="order-products-toolbar toolbar bottom"><?php echo $block->getChildHtml('pager'); ?></div>
+<?php endif; ?>
+<?php else: ?>
+	<div class="empty-message"><span><?php echo __('No Any Request Found'); ?></span></div>
+<?php endif; ?>

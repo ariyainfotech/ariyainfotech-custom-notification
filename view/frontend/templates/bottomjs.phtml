@@ -1,0 +1,11 @@
+<?php 
+	$helper = $this->helper('AriyaInfoTech\Notification\Helper\Data');
+	$notificationCount = $helper->getPendingShowNotification(); 
+?>
+<script>
+	require(['jquery', 'jquery/ui'], function($){
+		jQuery(document).ready( function() {
+			jQuery(".notification-cus span.noti-count").text("<?php echo $notificationCount; ?>");
+		});
+	});
+</script>

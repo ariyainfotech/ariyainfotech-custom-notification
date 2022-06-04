@@ -1,0 +1,18 @@
+<?php 
+	$helper = $this->helper('AriyaInfoTech\Notification\Helper\Data');
+	$notificationCount = $helper->getPendingShowNotification(); 
+	$currentCustomer = $helper->getCurrentCustomerId();
+?>
+
+<li class="header-notification">
+		<a href="<?php echo $block->getBaseUrl()?>notification/index/index/" class="notification-icon">
+		    <i class="fa fa-bell-o" aria-hidden="true">&nbsp;</i>
+		    <span class="count">
+		        <?php if($currentCustomer)
+		            echo $notificationCount; 
+		        else
+		            echo "0";
+		        ?>
+		      </span>
+		</a>
+</li>

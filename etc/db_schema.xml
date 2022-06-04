@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="ariyainfotech_notification_notification" resource="default" engine="innodb" comment="ariyainfotech_notification_notification Table">
+		<column xsi:type="smallint" name="notification_id" padding="6" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="notification_id"/>
+		</constraint>
+		<column name="type" nullable="true" xsi:type="varchar" length="255"/>
+		<column name="message" nullable="true" xsi:type="varchar" length="255"/>
+		<column name="message_label" nullable="true" xsi:type="varchar" length="255"/>
+		<column name="created_at" nullable="true" xsi:type="datetime" default="CURRENT_TIMESTAMP"/>
+		<column name="update_at" nullable="true" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="true"/>
+		<column name="status" nullable="true" xsi:type="int" identity="false"/>
+		<column name="store_code" nullable="true" xsi:type="int" identity="false"/>
+		<column name="website_id" nullable="true" xsi:type="int" identity="false"/>
+		<column name="customer_id" nullable="true" xsi:type="int" identity="false"/>
+		<column name="request_id" nullable="true" xsi:type="int" identity="false"/>
+		<column name="quote_id" nullable="true" xsi:type="int" identity="false"/>
+		<column name="order_id" nullable="true" xsi:type="int" identity="false"/>
+		<column name="is_requester" nullable="true" xsi:type="varchar" length="255"/>
+		<column name="requester_id" nullable="true" xsi:type="int" identity="false"/>
+	</table>
+</schema>

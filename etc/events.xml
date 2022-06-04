@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_place_after">
+        <observer name="notification_insert" instance="AriyaInfoTech\Notification\Observer\SalesOrderPlace" />
+    </event>
+	<event name="sales_order_invoice_save_after">
+        <observer name="notification_order_invoice_save_after_observer" instance="AriyaInfoTech\Notification\Observer\SalesOrderInvoiceSaveAfterObserver" />
+    </event>
+	<event name="sales_order_shipment_save_after">
+        <observer name="notification_myorder_order_shipment_after" instance="AriyaInfoTech\Notification\Observer\SalesOrderShipmentSaveAfterObserver" />
+    </event>
+	<event name="ariya_requester_request">
+        <observer name="notification_requester_request" instance="AriyaInfoTech\Notification\Observer\RequesterRequestRise"/>
+    </event>
+	<event name="budget_amount_incress_after">
+        <observer name="notification_budget_request" instance="AriyaInfoTech\Notification\Observer\BudgetRequest"/>
+    </event>
+</config>

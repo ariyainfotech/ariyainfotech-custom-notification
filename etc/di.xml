@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="AriyaInfoTech\Notification\Api\NotificationRepositoryInterface" type="AriyaInfoTech\Notification\Model\NotificationRepository"/>
+	<preference for="AriyaInfoTech\Notification\Api\Data\NotificationInterface" type="AriyaInfoTech\Notification\Model\Data\Notification"/>
+	<preference for="AriyaInfoTech\Notification\Api\Data\NotificationSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+</config>

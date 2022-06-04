@@ -1,0 +1,121 @@
+.notification-index-index {
+	.notification-main {
+	    margin-bottom: 2rem;
+	    border: 1px solid #e9eaec;
+	    background: #fff;
+	    border-radius: 5px;
+	    padding: 20px;
+	    .notification-block {
+		    padding: 12px 17px 18px 17px;
+		    background-color: #fff;
+		    display: inline-block;
+		    width: 100%;
+		    box-sizing: border-box;
+		    border-bottom: 1px solid #e9eaec;
+		    border-radius: 5px;
+		    /*box-shadow: 0px 2px 5px 0px #000000;*/
+		    color: #232f3e;
+		    &:first-child{
+		    	margin-top:0;
+		    }
+		    .icon-img {
+			    width: 4%;
+			    float: left;
+			}
+		    .notification-details {
+			    width: 96%;
+			    display: inline-block;
+			    h1 {
+				    width: 50%;
+				    float: left;
+				    text-align: left;
+				    &::before{
+				    	content:url(../Notification/view/frontend/web/images/bell-solid.svg);
+				    }
+				}
+				p.date {
+				    width: 50%;
+				    float: left;
+				    text-align: right;
+				    font-size: 14px;
+				}
+				p {
+				    width: 100%;
+				    float: left;
+				    text-align: left;
+				    font-size: 14px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1180px) and (min-width:980px){
+	.notification-index-index {
+		.notification-main {
+			.notification-block {
+				.icon-img {
+				    width: 3%;
+				    margin-top: 4px;
+				    float: left;
+				}
+				.notification-details{
+					float: right;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 980px) and (min-width:768px){
+	.notification-index-index {
+		.notification-main {
+			.notification-block {
+				.icon-img {
+				    width: 4%;
+				    margin-top: 6px;
+				    float: left;
+				}
+				.notification-details{
+					float: right;
+					width: 95%;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px) and (min-width: 480px){
+	.notification-index-index {
+		.notification-main {
+			.notification-block {
+    			padding: 12px 0 18px 0px;
+    			.icon-img {
+    			    margin-top: 5px;
+				}
+    			.notification-details {
+				    float: right;
+				    width: 95%;
+				}
+    		}
+    	}
+	}
+}
+@media (max-width: 480px) and (min-width: 320px){
+	.notification-index-index {
+		.notification-main {
+			padding: 10px;
+			.notification-block {
+    			padding: 12px 0 18px 0px;
+    			.icon-img {
+    			    margin-top: 4px;
+    			    width: 6%;
+				}
+    			.notification-details {
+				    float: right;
+				    width: 92%;
+				    h1{
+				    	font-size: 20px;
+				    }
+				}
+    		}
+    	}
+	}
+}
