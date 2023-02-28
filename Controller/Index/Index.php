@@ -37,9 +37,14 @@ class Index extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
-		if($this->_notificationHelper->getCurrentCustomerId()):
-			return $this->resultPageFactory->create();
-		endif;
-		return $this->_redirect('customer/account');
+		$notificationEnableDisable = $this->_notificationHelper->getConfigValue('notification/general/enable');
+        if($notificationEnableDisable == 1){
+            if($this->_notificationHelper->getCurrentCustomerId()):
+    			return $this->resultPageFactory->create();
+    		endif;
+            return $this->_redirect('customer/account');
+        }elseif($notificationEnableDisable == 0){
+            return $this->_redirect('customer/account');
+        }
     }
 }
